@@ -1,0 +1,7 @@
+key thymeleaf expressions
+
+- variable expression : ${...}
+- selection variable expression: *{---}
+- message expression: #{---}
+- link url expression: @{---}
+- fragment expression: ~{---}
