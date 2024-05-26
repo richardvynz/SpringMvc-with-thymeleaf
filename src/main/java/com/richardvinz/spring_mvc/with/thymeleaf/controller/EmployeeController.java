@@ -4,10 +4,7 @@ import com.richardvinz.spring_mvc.with.thymeleaf.entity.Employee;
 import com.richardvinz.spring_mvc.with.thymeleaf.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -48,6 +45,12 @@ public class EmployeeController {
         Employee  employee = employeeRepository.findById(employeeId).get();
         mav.addObject("employee",employee);
         return mav;
+    }
+
+    @GetMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam Long employeeId){
+        employeeRepository.deleteById(employeeId);
+        return "redirect:/employeeList";
     }
 
 }
