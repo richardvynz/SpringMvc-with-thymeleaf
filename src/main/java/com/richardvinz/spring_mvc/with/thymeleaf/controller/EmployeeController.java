@@ -21,7 +21,8 @@ public class EmployeeController {
     public ModelAndView showEmployee(){
         ModelAndView mav = new ModelAndView("list-employees");
        List<Employee>  employeeList = employeeRepository.findAll();
-       mav.addObject("employees", employeeList);
+        System.out.println(employeeList); // Debug statement
+        mav.addObject("employees", employeeList);
        return mav;
     }
 }

@@ -1,29 +1,28 @@
-<html xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>
-        List of Employees
-    </title>
+    <title>List of Employees</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 
 <body>
 <div>
     <h2>List of Employees</h2>
     <hr/>
-    <table border ="1">
+    <table border="1">
         <thead>
         <tr>
-            <th>Id</th>
             <th> Name</th>
             <th> Email</th>
-            <th> department</th>
+            <th> Department</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each = "employee: ${employees}">
-            <td th:text = "${employees.id}"> </td>
-            <td th:text = "${employees.name}"> </td>
-            <td th:text = "${employees.email}"> </td>
-            <td th:text = "${employees.department}"> </td>
+           <tr th:each = "employee: ${employees}">
+            <td th:text = "${employee.name}"></td>
+            <td th:text = "${employee.email}"></td>
+            <td th:text = "${employee.department}"></td>
         </tr>
         </tbody>
     </table>
